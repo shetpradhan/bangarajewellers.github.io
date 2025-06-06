@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bangles Collection - Banagara Jewellers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #fffbea;
+      color: #333;
+    }
+    header {
+      background-color: #b38b6d;
+      padding: 1rem;
+      text-align: center;
+      color: white;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #f7ebdd;
+      padding: 0.8rem;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #8b5c3c;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #b38b6d;
+    }
+    h2 {
+      text-align: center;
+      color: #8b5c3c;
+      margin-top: 2rem;
+      font-family: 'Playfair Display', serif;
+    }
+    .bangle-category {
+        margin: 2rem auto;
+        max-width: 1000px;
+        text-align: center;
+    }
+    .bangle-category h3 {
+      margin-bottom: 1rem;
+      color: #a4703a;
+      border-bottom: 2px solid #b38b6d;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
+    .bangle-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+      justify-items: center;
+    }
+    .bangle-gallery img {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .bangle-gallery img:hover {
+      transform: scale(1.05);
+    }
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s, opacity 0.3s;
+      z-index:1000;
+    }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #fff;
+    }
+    .lightbox.active {
+      visibility: visible;
+      opacity: 1;
+    }
+    footer {
+      background: #b38b6d;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>Banagara Jewellers - Bangles</header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="rings.html">Rings</a>
+    <a href="bangles.html">Bangles</a>
+    <a href="necklaces.html">Necklaces</a>
+    <a href="more.html">More</a>
+  </nav>
+
+  <h2>Elegant Bangle Designs</h2>
+
+  <section class="bangle-category">
+    <h3>Traditional Bangles</h3>
+    <div class="bangle-gallery">
+      <img src="images/bangle1.png" alt="Bangle 1">
+      <img src="images/bangle2.png" alt="Bangle 2">
+      <img src="images/bangle3.png" alt="Bangle 3">
+    </div>
+  </section>
+
+  <section class="bangle-category">
+    <h3>Modern Bangles</h3>
+    <div class="bangle-gallery">
+      <img src="images/bangle4.png" alt="Modern Bangle 1">
+      <img src="images/bangle5.png" alt="Modern Bangle 2">
+      <img src="images/bangle6.png" alt="Modern Bangle 3">
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="Zoomed Bangle">
+  </div>
+
+  <footer>
+    &copy; 2025 Banagara Jewellers | Grace in every circle ✨
+  </footer>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+
+    document.querySelectorAll('.bangle-gallery img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('active');
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rings Collection - Banagara Jewellers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #fffaf3;
+      color: #333;
+    }
+    header {
+      background-color: #d4af37;
+      padding: 1rem;
+      text-align: center;
+      color: white;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #fff3dc;
+      padding: 0.8rem;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #7c5c1f;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #d4af37;
+    }
+    h2 {
+      text-align: center;
+      color: #7c5c1f;
+      margin-top: 2rem;
+      font-family: 'Playfair Display', serif;
+    }
+    .ring-category {
+        margin: 2rem auto;
+        max-width: 1000px;
+        text-align: center;
+        }
+    .ring-category h3 {
+      margin-bottom: 1rem;
+      color: #b68b25;
+      border-bottom: 2px solid #d4af37;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
+    .ring-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+      justify-items: center;
+    }
+    .ring-gallery img {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .ring-gallery img:hover {
+      transform: scale(1.05);
+    }
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s, opacity 0.3s;
+      z-index:1000;
+    }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #fff;
+    }
+    .lightbox.active {
+      visibility: visible;
+      opacity: 1;
+    }
+    footer {
+      background: #d4af37;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>Banagara Jewellers - Rings</header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="rings.html">Rings</a>
+    <a href="bangles.html">Bangles</a>
+    <a href="necklaces.html">Necklaces</a>
+    <a href="more.html">More</a>
+  </nav>
+
+  <h2>Our Stunning Ring Collections</h2>
+
+  <section class="ring-category">
+    <h3>Gold Rings</h3>
+    <div class="ring-gallery">
+      <img src="images/ring1.png" alt="Gold Ring">
+      <img src="images/ring2.png" alt="Gold Ring 2">
+      <img src="images/ring3.png" alt="Gold Ring 3">
+    </div>
+  </section>
+
+  <section class="ring-category">
+    <h3>Diamond Rings</h3>
+    <div class="ring-gallery">
+      <img src="images/dring1.png" alt="Diamond Ring">
+      <img src="images/dring2.png" alt="Diamond Ring 2">
+      <img src="images/dring3.png" alt="Diamond Ring 3">
+      <img src="images/dring4.png" alt="Diamond Ring 4">
+    </div>
+  </section>
+
+  <section class="ring-category">
+    <h3>Couple Rings</h3>
+    <div class="ring-gallery">
+      <img src="images/cring1.png" alt="Couple Ring">
+      <img src="images/cring2.png" alt="Couple Ring 2">
+      <img src="images/cring3.png" alt="Couple Ring 3">
+    </div>
+    </section>  
+
+    <div class="lightbox" id="lightbox">
+        <img src="" alt="Zoomed Ring">
+    </div>
+
+  <footer>
+    &copy; 2025 Bangara Jewellers | Crafted with elegance 💍
+  </footer>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+
+    document.querySelectorAll('.ring-gallery img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('active');
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+    });
+  </script>
+</body>
+</html>

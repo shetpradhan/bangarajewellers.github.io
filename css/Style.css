@@ -1,0 +1,141 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', 'Poppins', sans-serif;
+  background-color: #fdf9f3;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: #b28f55;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #a1762d;
+}
+
+/* Header */
+header {
+  background: #fff7ea;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #a1762d;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Navigation */
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+  margin-top: 10px;
+}
+
+nav ul li a {
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 5px;
+  background: transparent;
+}
+
+nav ul li a:hover {
+  background: #fcebc4;
+}
+
+/* Filter Buttons */
+button {
+  padding: 10px 20px;
+  margin: 10px 5px;
+  border: none;
+  background-color: #e0c08c;
+  color: #fff;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #b28f55;
+}
+
+/* Main Content */
+main {
+  padding: 40px 20px;
+}
+
+main h2 {
+  text-align: center;
+  color: #a1762d;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+/* Product Cards */
+.product-card {
+  max-width: 300px;
+  margin: 0 auto 30px;
+  background: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.product-card p {
+  font-size: 1.1rem;
+  color: #555;
+  font-weight: 500;
+}
+
+/* Sections */
+section {
+  margin-bottom: 60px;
+}
+
+/* Footer */
+footer {
+  background-color: #fff2d7;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #888;
+}
+
+@media (max-width: 768px) {
+	nav ul {
+		flex-direction: column;
+		gap: 10px;
+	}
+	
+	.product-card {
+		max-width: 90%;
+	}
+	}

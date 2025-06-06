@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>More Collection - Banagara Jewellers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #fef9f2;
+      color: #333;
+    }
+    header {
+      background-color: #914c98;
+      padding: 1rem;
+      text-align: center;
+      color: white;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #f3e5f5;
+      padding: 0.8rem;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #5e2c65;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #914c98;
+    }
+    h2 {
+      text-align: center;
+      color: #5e2c65;
+      margin-top: 2rem;
+      font-family: 'Playfair Display', serif;
+    }
+    .necklace-category {
+        margin: 2rem auto;
+        max-width: 1000px;
+        text-align: center;
+    }
+    .necklace-category h3 {
+      margin-bottom: 1rem;
+      color: #773c88;
+      border-bottom: 2px solid #914c98;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
+    .necklace-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+      justify-items: center;
+    }
+    .necklace-gallery img {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .necklace-gallery img:hover {
+      transform: scale(1.05);
+    }
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s, opacity 0.3s;
+      z-index:1000;
+    }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #fff;
+    }
+    .lightbox.active {
+      visibility: visible;
+      opacity: 1;
+    }
+    footer {
+      background: #914c98;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>Banagara Jewellers - More collections</header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="rings.html">Rings</a>
+    <a href="bangles.html">Bangles</a>
+    <a href="necklaces.html">Necklaces</a>
+    <a href="more.html">More</a>
+  </nav>
+
+  <h2>More ornament collections</h2>
+
+  <section class="necklace-category">
+    <h3>chains</h3>
+    <div class="necklace-gallery">
+      <img src="images/necklace 1.png" alt="Gold Necklace">
+      <img src="images/necklace 2.png" alt="Gold Necklace 2">
+      <img src="images/necklace 4.png" alt="Gold Necklace 3">
+    </div>
+  </section>
+
+  <section class="necklace-category">
+    <h3>Stone Necklaces</h3>
+    <div class="necklace-gallery">
+      <img src="images/necklace 3.png" alt="Stone Necklace">
+      <img src="images/necklace 5.png" alt="Stone Necklace 2">
+      <img src="images/coorg1.png" alt="Stone Necklace 3">
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="Zoomed Necklace">
+  </div>
+
+  <footer>
+    &copy; 2025 Banagara Jewellers | Where elegance meets tradition 💫
+  </footer>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+
+    document.querySelectorAll('.necklace-gallery img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('active');
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bangara Jewelry Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #fff8f0;
+      color: #333;
+    }
+    
+    header {
+      background-color: #d4af37;
+      padding: 1rem;
+      text-align: center;
+      color: white;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #fff3dc;
+      padding: 0.8rem;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #7c5c1f;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #d4af37;
+    }
+    .slider {
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+      max-height: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    .slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+    .slider img.active {
+      display: block;
+    }
+    footer div{
+    line-height: 1.5;
+      background: #d4af37;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+ <header>
+  <div style="display: flex; align-items: center; justify-content: flex-start; gap: 1rem; padding-left: 2rem;">
+    <img src="images/logo2.png" alt="Banagara Jewellers Logo" style="height: 80px; border-radius: 12px;">
+    <div style="font-size: 2.2rem; font-family: 'Playfair Display', serif; font-weight: 600;">Banagara Jewellers</div>
+  </div>
+</header>
+
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="rings.html">Rings</a>
+    <a href="bangles.html">Bangles</a>
+    <a href="necklaces.html">Necklaces</a>
+    <a href="more.html">More</a>
+  </nav>
+
+  <div class="slider">
+    <img src="https://www.forestessentialsindia.com/blog/wp-content/uploads/2017/08/Home-Banner.jpg" class="active" alt="Jewelry Slide 1">
+    <img src="https://wallpaperaccess.com/full/1913670.jpg" alt="Jewelry Slide 2">
+    <img src="https://i.pinimg.com/originals/ff/9c/20/ff9c204f62b65141a988cde3c7b1484f.jpg" alt="Jewelry Slide 3">
+  </div>
+
+ <footer >
+  <div style="margin-bottom: 0.5rem;">
+    &copy; 2025 Bangara Jewellers | Crafted with elegance 💍
+  </div>
+  <div style="font-size: 0.9rem;">
+    📍 <strong>Location:</strong> Gandhi Bazar, Shivamogga, India<br>
+    📞 <strong>Contact:</strong> +91 9845231626<br>
+    ✉️ <strong>Email:</strong> contact@banagarajewellers.com
+  </div>
+</footer>
+
+  <script>
+    const slides = document.querySelectorAll('.slider img');
+    let currentIndex = 0;
+
+    function showNextSlide() {
+      slides[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % slides.length;
+      slides[currentIndex].classList.add('active');
+    }
+
+    setInterval(showNextSlide, 3000); // Change every 5 seconds
+  </script>
+</body>
+</html>
+
